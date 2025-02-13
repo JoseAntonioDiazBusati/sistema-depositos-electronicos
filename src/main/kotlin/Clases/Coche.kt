@@ -4,20 +4,23 @@ import org.example.Interfaces.Vehiculo
 
 
 class Coche(): Vehiculo {
-    override val kmHora: Int
-        get() = TODO("Not yet implemented")
 
-
-    override val motorEncendido: Boolean
-        get() = TODO("Not yet implemented")
+    override var kmHora: Int = 0
+    override var motorEncendido: Boolean = false
 
 
     override fun acelerar(): Int {
-        TODO("Not yet implemented")
+        if (motorEncendido != false){
+            kmHora += 20
+        }
+        return kmHora
     }
 
 
     override fun frenar(): Int {
-        TODO("Not yet implemented")
+        if (motorEncendido != false){
+            kmHora = 0
+        }
+        return kmHora
     }
 }

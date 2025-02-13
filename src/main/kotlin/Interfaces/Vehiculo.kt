@@ -2,8 +2,8 @@ package org.example.Interfaces
 
 interface Vehiculo {
 
-    val motorEncendido: Boolean
-    val kmHora: Int
+    var motorEncendido: Boolean
+    var kmHora: Int
 
     fun acelerar(): Int
 
