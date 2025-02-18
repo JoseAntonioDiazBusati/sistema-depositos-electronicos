@@ -1,25 +1,39 @@
 package org.example.Clases
 
+import org.example.Interfaces.EncendidoApagado
 import org.example.Interfaces.Vehiculo
 
 
-class Coche(): Vehiculo {
+class Coche(): Vehiculo, EncendidoApagado {
 
     override var kmHora: Int = 0
     override var motorEncendido: Boolean = false
 
+    override fun apagar() {
+        motorEncendido = true
+        println("Se ha encendido el motor")
+    }
 
-    override fun acelerar(): Int {
-        if (motorEncendido != false){
-            kmHora += 20
+    override fun encender() {
+        motorEncendido = false
+        println("Se ha apagado el motor")
+    }
+
+    override fun acelerar(velocidad: Int): Int {
+        if (motorEncendido){
+            kmHora += velocidad
+        } else {
+            println("No se puede acelerar, el motor está apagado.")
         }
         return kmHora
     }
 
 
-    override fun frenar(): Int {
-        if (motorEncendido != false){
-            kmHora = 0
+    override fun frenar(velocidad: Int): Int {
+        if (motorEncendido){
+            kmHora -= velocidad
+        }else {
+            println("No se puede frenar, el motor está apagado.")
         }
         return kmHora
     }

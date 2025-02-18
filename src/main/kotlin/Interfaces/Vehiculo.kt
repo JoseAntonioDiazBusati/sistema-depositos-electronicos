@@ -5,7 +5,7 @@ interface Vehiculo {
     var motorEncendido: Boolean
     var kmHora: Int
 
-    fun acelerar(): Int
+    fun acelerar(velocidad: Int): Int
 
-    fun frenar():Int
+    fun frenar(velocidad: Int):Int
 }

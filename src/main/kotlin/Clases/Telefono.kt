@@ -5,15 +5,23 @@ import org.example.Interfaces.EncendidoApagado
 
 class Telefono: EncendidoApagado,DispositivoElectronico{
 
+    var encendido: Boolean = false
+
     override fun apagar() {
-        TODO("Not yet implemented")
+        encendido = false
+        println("Se ha apagado el telefono.")
     }
 
     override fun encender() {
-        TODO("Not yet implemented")
+        encendido = true
+        println("Se ha encendido el telefono.")
     }
 
     override fun reiniciar() {
-        TODO("Not yet implemented")
+        if (encendido){
+            println("Reiniciando...")
+        }else{
+            println("No se puede reiniciar, el telefono está apagado.")
+        }
     }
 }

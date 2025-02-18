@@ -4,12 +4,16 @@ import org.example.Interfaces.EncendidoApagado
 
 class Lavadora: EncendidoApagado {
 
+    private var encendida = false
+
     override fun encender() {
-        TODO("Not yet implemented")
+        encendida = true
+        println("Se ha encendido la lavadora")
     }
 
     override fun apagar() {
-        TODO("Not yet implemented")
+        encendida = false
+        println("Se ha apagado la lavadora")
     }
 
 }
